@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-color:white;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+    
+
+}
+.amostrasPinturas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none
+
+
+
+}
+.amostrasPinturas>li{
+    width: 250px;
+    height:360px ;
+    display: inline-block;
+    border-radius: 3%;
+    text-align: center;
+    background-color: #e5e5e5;
+    list-style: none;
+    font-family:'Courier New', Courier, monospace;
+    
+
+}
+main{
+    display: flex;
+    
+}
+
+
+section{
+    display:flex;
+}
+header{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 10px solid white;
+    padding-left: 20px; 
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom: 10px; 
+    background-color: #e5e5e5;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family:'Courier New', Courier, monospace;
+}
+nav{
+    text-align: right;
+}
+a{
+    display:inline-flex;
+    align-items: center;
+    color: blueviolet;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    margin-right: 30px;
+    text-decoration: none;
+}
+a:hover{
+    background-color:aqua;
+    border-radius: 50%;
+}
+img{
+   
+    width: 180px;
+    height: 180px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    
+
+}
+.logo{
+
+    display: inline-block;
+    border-radius: 6px;
+    width:150px;
+    height: 150px;
+}
+
+
+.amostra1{
+    display: flex;
+    border: 5px;
+    margin: 5%;
+}
+.amostra2{
+    display: flex;
+    border: 5px; 
+    margin: 5%;
+    
+}
+button{
+    color: blueviolet;
+    background-color: #e5e5e5;
+    margin:0%;
+    border: 1px;
+    border-radius: 6px;
+   
+
+}
+button:hover{
+    background-color:aqua;
+    border-radius: 50%;
+}
+.tagClass{
+    text-align: left;
+  
+    color: white;
+   
+
+   
+    
+
+    
+}
+.tagProduto{
+    background: blueviolet;
+
+}
+.tituloClass{
+    font-family:'Courier New', Courier, monospace;
+    text-align: justify;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right:2px;
+    padding-top:1px;
+    padding-bottom: 1px;
+    display: block;
+    
+    
+
+}
+.descricaoClass{
+    font-family:'Courier New', Courier, monospace;
+    text-align: justify;
+    font-size: 12px;
+    
+
+}
+.AddCartClass{
+    font-family:'Courier New', Courier, monospace;
+    text-align: justify;
+    font-size: 12px;
+    font-weight: bold;
+
+
+}
+.liClass{
+    width: 250px;
+    height: max-content;
+    display: inline-block;
+    border-radius: 3%;
+    text-align: center;
+    background-color: #e5e5e5;
+    list-style: none;
+    font-family:'Courier New', Courier, monospace;
+    padding: 6px;
+
+}
+.liClass:hover{
+    background-color:aqua;
+    border-radius: 3%;
+    
+}
+
+
+.carrinhoCompras{
+    float: right;
+    width: 250px;
+    height: 350px;
+    border: 0px solid gray; 
+    border-radius: 8px;
+    margin: 1%;
+    background-color: #e5e5e5;
+    top:10%;
+    font-family:'Courier New', Courier, monospace;
+
+
+}
+.pesquisa{
+    text-align: right;
+    font-family:'Courier New', Courier, monospace;
+    
+}
+.tituloCarrinho{
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    background-color: blueviolet;
+    color: white;
+    padding: 0%;
+    margin:0%;
+    border-radius: 3px;
+
+}
+

@@ -1,64 +1,64 @@
 // Banco de dados dos produtos
 
-const data = [
+const produtosPinturas = [
   {
     id: 1,
-    img: "../img/jaqueta.svg",
-    nameItem: "Lightweight Jacket",
+    img: "../img/acrilico1.png",
+    nameItem: "Sonhadora no acrilico",
     description:
-      "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
+      "Decore seu ambiente com essa tela pintada em acrílico de uma jovem sonhadora...",
     value: 100,
     addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
+    tag: ["acrilico"],
   },
   {
     id: 2,
-    img: "../img/gorro.svg",
-    nameItem: "Black Hat",
+    img: "../img/acrilico2.png",
+    nameItem: "Sonhadora no acrilico 2",
     description:
-      "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
+    "Decore seu ambiente com essa tela pintada em acrílico de uma jovem sonhadora...",
     value: 100,
     addCart: "Adicionar ao carrinho",
-    tag: ["Acessórios"],
+    tag: ["acrilico"],
   },
   {
     id: 3,
-    img: "../img/mascara.svg",
-    nameItem: "Mask",
+    img: "../img/guache1.png",
+    nameItem: "Sonhando no guache",
     description:
-      "Esta máscara facial durável é feita de duas camadas de tecido tratado e possui presilhas...",
+    "Decore seu ambiente com essa tela pintada em guache retratando alguém sonhando.",
     value: 40,
     addCart: "Adicionar ao carrinho",
-    tag: ["Acessórios"],
+    tag: ["guache"],
   },
   {
     id: 4,
-    img: "../img/camiseta_preta.svg",
-    nameItem: "T-Shirt",
+    img: "../img/guache2.png",
+    nameItem: "Quadro de Lysis em tinta guache.",
     description:
-      "Esta t-shirt é imprescindível no seu guarda-roupa, combinando o caimento intemporal de...",
+      "Quadro de Lysis em tinta guache.",
     value: 100,
     addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
+    tag: ["guache"],
   },
   {
     id: 5,
-    img: "../img/camiseta_branca.svg",
-    nameItem: "Short-Sleeve T-Shirt",
+    img: "../img/oleo1.png",
+    nameItem: "Banho de tinta a óleo",
     description:
-      "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
+      "Sua casa vai ganhar muita cor com esse quadro inspirado num cachorrinho a óleo!",
     value: 100,
     addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
+    tag: ["oleo"],
   },
   {
     id: 6,
-    img: "../img/moletom.svg",
-    nameItem: "Champion Packable Jacket",
+    img: "../img/oleo2.png",
+    nameItem: "Observador a óleo",
     description:
-      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
+    "Essa pintura a óleo nos revela uma das características mais conhecida dos gatos: a curiosidade!",
     value: 100,
     addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
+    tag: ["oleo"],
   },
 ];
