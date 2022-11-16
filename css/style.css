@@ -14,11 +14,22 @@ body{
     
 
 }
+.totalSoma{
+    background-color: blueviolet;
+    width: 250px;
+    height: 100px;
+}
+.classeImagemCarrinho{
+    width:95px;
+    height:100px;
+
+}
 .amostrasPinturas{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     list-style: none
+
 
 
 
@@ -34,6 +45,10 @@ body{
     font-family:'Courier New', Courier, monospace;
     
 
+}
+#corpoCarrinhoCompras{
+    overflow-y: auto;
+    height: 380px;
 }
 main{
     display: flex;
@@ -75,6 +90,13 @@ a:hover{
     background-color:aqua;
     border-radius: 50%;
 }
+.AddcorpoTotalSomaClass{
+    background-color: blueviolet;
+    width: 300px;
+    height: 50px;
+
+}
+
 img{
    
     width: 180px;
@@ -184,7 +206,7 @@ button:hover{
 .carrinhoCompras{
     float: right;
     width: 250px;
-    height: 350px;
+    height: 400px;
     border: 0px solid gray; 
     border-radius: 8px;
     margin: 1%;

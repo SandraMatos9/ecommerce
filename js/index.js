@@ -77,6 +77,18 @@ let produtos = document.querySelector('.amostrasPinturas')
 let pesquisa= document.querySelector('#pesquisa')
 let botaoPesquisar= document.querySelector('#pesquisar')
 let corpoCarrinho=document.createElement('div')
+let corpoTotalSoma=document.createElement('li')
+let linkTodos=document.createElement('a')
+let linkGuache=document.createElement('a')
+let linkAcrilico=document.createElement('a')
+let linkOleo=document.createElement('a')
+let carrinhoItens=[]
+// função para aacessar links:
+function acessarLinks(){
+  
+
+
+}
 
 
 
@@ -105,8 +117,6 @@ botaoPesquisar.addEventListener('click', ()=>{
 //     let idElemento=e.target.id;
 //     let id=parseInt(idElemento.substring())
 //     let pintura=procuraProduto(id)
-let elementoPintura
-        // 
 
 //   }
 // }
@@ -119,39 +129,56 @@ let elementoPintura
 //     }
 //   }
 //   return "Pintura não encontrada"
-// }
 
 
+function finalizacao(carrinho){
+  let somaProdutos=0
+    for(let i=0; i<carrinho.length;i++){
+      
+      somaProdutos+=carrinhoItens[i].value
+      
+    }
+   
+    
+  return somaProdutos
+
+  
+  }
 
 
+  // function removequant(carrinho){
+  //   for(let i=0; i<carrinho.length;i++){
+  //     carrinhoItens[i].value.splice(i,1)
 
+  //   }
+    
+    
+    
+    
+    
+  // }
 
+  
+  
+  function totalquant(x){
+    let quant= document.querySelector('.quant')
+    let valorTotal=document.querySelector('.valorTotal')
+    quant.innerText=`Quantidade: ${carrinhoItens.length}`
+    console.log(finalizacao(carrinhoItens))
+    let soma=finalizacao(carrinhoItens)
+    valorTotal.innerHTML=`Valor total: ${soma}`
+    
+  }
 
-// //SEPARA TIPO DE TINTA
-// function separaTipoDeTinta(){
-//     for(let i=0; i<produtosPintura.length;i++){
-        
-//         if(produtosPintura[i].tag=="acrilico"){
-//             listAcrilico.push(produtosPintura[i])
-
-//         }else if(produtosPintura[i].tag=="guache"){
-//             listGuache.push(produtosPintura[i])
-
-//         }else if(produtosPintura[i].tag=="oleo"){
-//             listOleo.push(produtosPintura[i])
-//         }
-//     }
-//     return 
-
-// }
-
+ 
 //GERAR CARD
 function gerarCard(){
     for(let i=0; i<produtosPintura.length;i++){
         //criei as coisas
+        
         let li = document.createElement('li');
         let imagem= document.createElement('img');
-        let titulo = document.createElement('span')//figcaption
+        let titulo = document.createElement('span')
         let descricao=document.createElement('p')
         let tags=document.createElement('p')
         let preco= document.createElement('p')
@@ -175,61 +202,66 @@ function gerarCard(){
         preco.classList.add("precoClass")
         li.classList.add("liClass")
         ddCart.classList.add('AddCartClass')
+        corpoTotalSoma.classList.add('AddcorpoTotalSomaClass')
 
       //adicionando eventos
       ddCart.addEventListener('click',function(){
-        let texto=document.createElement("p,button")
         
-        texto.innerText= produtosPintura[i].nameItem
-        texto.remove()
-        carrinhoVazio.append(texto)
+        let compras = document.querySelector("#corpoCarrinhoCompras")
+        let liProduto=document.createElement('li')
+        let imagemProduto=document.createElement("img")
+        let textoProduto=document.createElement("p")
+       let botaoRemover=document.createElement("button")
+        let precoProduto = document.createElement('p')
+        imagemProduto.classList.add("classeImagemCarrinho")
+        carrinhoItens.push(produtosPintura[i])
+        let quant= document.querySelector('.quant')
+        let valorTotal=document.querySelector('.valorTotal')
+        quant.innerText=`Quantidade: ${carrinhoItens.length}`
+        console.log(finalizacao(carrinhoItens))
+        let soma=finalizacao(carrinhoItens)
+        valorTotal.innerHTML=`Valor total: ${soma}`
+       
+        console.log(produtosPintura[i])
+        
+        botaoRemover.innerText="Remover produto"
+        botaoRemover.addEventListener('click', function(){
+         
+         
+         quant.innerText=`Quantidade: ${carrinhoItens.length--}`
+         liProduto.remove()
+          
+         valorTotal.innerText= `Valor total: ${soma--}`
+
+        })
+
+        imagemProduto.src=produtosPintura[i].img
+        textoProduto.innerText= produtosPintura[i].nameItem
+  
+        precoProduto.innerText=produtosPintura[i].value
+        liProduto.append(imagemProduto,textoProduto,precoProduto,botaoRemover)
+        compras.append(liProduto)
       })
     // inserindo na li
+       
         li.append(imagem,tags,titulo,descricao,preco,ddCart);
-        //append da certo com tudo
+       
         produtos.append(li)
-        pesquisa.append(carrinhoCompras,carrinhoVazio)
+
+       
     }
     
 
 }
-console.log(gerarCard())
-
-//GERAR  CARRINHO DE COMPRAS
-function carrinhoCompras(){
-  let tituloCompras= "Carrinho vazio"
-  return
-}
+gerarCard()
 
 
 
 //proximo passo:  criar  botão no carrinho, fazer evento de adicionar item, 
 //COMPRAS
 
-function comprasTotal(produtosPintura){
-    for(let i=0; i<produtosPintura.length;i++){
-        let precoItem= document.createElement('p')
-        precoItem.innerText = 'R$' + produtosPintura[i].value
-        precoItem.classList.add('amostrasPinturas')
-        
-
-        let nomeItem= document.createElement('p')
-        nomeItem.innerText =  productsCart[i].nameItem
-        nomeItem.classList.add('amostrasPinturas')
-
-        let listaItem= document.createElement('li')
-        listaItem.append(nomeItem,precoItem)
-        ul.append(listaItem)
-        
-
-    }
-    return
-    
 
 
-    
 
-
-}
 
 
