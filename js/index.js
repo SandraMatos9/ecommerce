@@ -231,7 +231,7 @@ function gerarCard(){
          quant.innerText=`Quantidade: ${carrinhoItens.length--}`
          liProduto.remove()
           
-         valorTotal.innerText= `Valor total: ${soma--}`
+         valorTotal.innerText= `Valor total: ${soma}`
 
         })
 
