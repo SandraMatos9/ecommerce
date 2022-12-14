@@ -16,8 +16,10 @@ body{
 }
 .totalSoma{
     background-color: blueviolet;
+    padding:30px;
     width: 250px;
     height: 100px;
+    color:white
 }
 .classeImagemCarrinho{
     width:95px;
@@ -43,6 +45,7 @@ body{
     background-color: #e5e5e5;
     list-style: none;
     font-family:'Courier New', Courier, monospace;
+    padding: 15px;
     
 
 }
@@ -80,8 +83,9 @@ nav{
 a{
     display:inline-flex;
     align-items: center;
-    color: blueviolet;
-    font-size: 20px;
+    color: blueviolet ;
+    font-weight: bold;
+    font-size: 22px ;
     font-family:'Courier New', Courier, monospace;
     margin-right: 30px;
     text-decoration: none;
@@ -131,15 +135,18 @@ img{
 button{
     color: blueviolet;
     background-color: #e5e5e5;
-    margin:0%;
+    /* margin:0%; */
     border: 1px;
     border-radius: 6px;
+    
+    
    
 
 }
 button:hover{
     background-color:aqua;
     border-radius: 50%;
+    color: black;
 }
 .tagClass{
     text-align: left;
@@ -213,12 +220,14 @@ button:hover{
     background-color: #e5e5e5;
     top:10%;
     font-family:'Courier New', Courier, monospace;
+    list-style: none
 
 
 }
 .pesquisa{
     text-align: right;
     font-family:'Courier New', Courier, monospace;
+    list-style: none
     
 }
 .tituloCarrinho{
@@ -229,6 +238,7 @@ button:hover{
     padding: 0%;
     margin:0%;
     border-radius: 3px;
+    list-style: none
 
 }
 

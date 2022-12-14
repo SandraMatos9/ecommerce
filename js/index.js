@@ -1,6 +1,3 @@
-let listGuache=[]
-let listAcrilico=[]
-let listOleo=[]
 
 
 const produtosPintura = [
@@ -66,6 +63,9 @@ const produtosPintura = [
     },
   ];
 
+  let quant= document.querySelector('.quant')
+  let valorTotal=document.querySelector('.valorTotal')
+
 let body= document.querySelector('body')
 let main= document.createElement('main')
 let section=document.createElement('section')
@@ -83,12 +83,32 @@ let linkGuache=document.createElement('a')
 let linkAcrilico=document.createElement('a')
 let linkOleo=document.createElement('a')
 let carrinhoItens=[]
-// função para aacessar links:
-function acessarLinks(){
-  
 
 
+
+// soma e contador
+
+function somaEcontador(){
+  let somaProdutos=0
+  let totalItens=0
+  for(let i=0; i<carrinhoItens.length;i++){
+    somaProdutos+=carrinhoItens[i].value
+    totalItens+=1;
+   
+  }
+  quant.innerText=`Quantidade: ${totalItens}`
+  valorTotal.innerHTML=`Valor total: ${somaProdutos}`
 }
+function SubtrairEcontador(){
+  
+ 
+  
+}
+
+
+
+
+
 
 
 
@@ -99,66 +119,37 @@ botaoPesquisar.addEventListener('click', ()=>{
 })
 
 
-// //PESQUISA PRODUTO
-// function pesquisaProduto(){
-//     let nomeProduto= pesquisa.value
-
-//     for(let i=0; i<produtosPintura.length;i++){
-//         if(produtosPintura[i].nameItem==nomeProduto){
-//             return produtosPintura[i];        }
-
-//     }
-    
-// }
-// //** let botoesProduto= document.querySelectorAll()
-// for(let i=0; i<botoesProduto.length;i++){
-//   let botao= botoesProdutos[i];
-//   botao.addEventListener('click',function(e)){
-//     let idElemento=e.target.id;
-//     let id=parseInt(idElemento.substring())
-//     let pintura=procuraProduto(id)
-
-//   }
-// }
-
-// function procuraProduto(id){
-//   for(let i=0; i<produtosPintura.length;i++){
-//     let pintura=produtosPintura[i];
-//     if(pintura.id==id){
-//       return pintura
-//     }
-//   }
-//   return "Pintura não encontrada"
 
 
-function finalizacao(carrinho){
+
+//var soma=0
+          //var totalItens=0
+          //carrinhoItens.splice(i,1)
+          //for(let i=0;carrinhoItens.length;i++){
+            //soma+=carrinhoItens[i]
+            //totalItens++
+           
+
+
+function finalizacao(carrinhoItens){
   let somaProdutos=0
-    for(let i=0; i<carrinho.length;i++){
-      
+  let totalItens=0
+    for(let i=0; i<carrinhoItens.length;i++){
       somaProdutos+=carrinhoItens[i].value
+      totalItens++
+      carrinhoItens.splice(i,1)
       
     }
+      quant.innerText=`Quantidade: ${totalItens}`
+      valorTotal.innerHTML=`Valor total: ${somaProdutos}`
    
     
-  return somaProdutos
+  return 
 
   
   }
 
 
-  // function removequant(carrinho){
-  //   for(let i=0; i<carrinho.length;i++){
-  //     carrinhoItens[i].value.splice(i,1)
-
-  //   }
-    
-    
-    
-    
-    
-  // }
-
-  
   
   function totalquant(x){
     let quant= document.querySelector('.quant')
@@ -177,6 +168,7 @@ function gerarCard(){
         //criei as coisas
         
         let li = document.createElement('li');
+        li.classList.add('card-pintura');
         let imagem= document.createElement('img');
         let titulo = document.createElement('span')
         let descricao=document.createElement('p')
@@ -206,32 +198,38 @@ function gerarCard(){
 
       //adicionando eventos
       ddCart.addEventListener('click',function(){
-        
+       
         let compras = document.querySelector("#corpoCarrinhoCompras")
         let liProduto=document.createElement('li')
         let imagemProduto=document.createElement("img")
+        // let divNomePrecoBotao = document.createElement('div')
         let textoProduto=document.createElement("p")
        let botaoRemover=document.createElement("button")
         let precoProduto = document.createElement('p')
         imagemProduto.classList.add("classeImagemCarrinho")
         carrinhoItens.push(produtosPintura[i])
+        somaEcontador()
+        console.log(carrinhoItens)
         let quant= document.querySelector('.quant')
         let valorTotal=document.querySelector('.valorTotal')
-        quant.innerText=`Quantidade: ${carrinhoItens.length}`
-        console.log(finalizacao(carrinhoItens))
-        let soma=finalizacao(carrinhoItens)
-        valorTotal.innerHTML=`Valor total: ${soma}`
-       
-        console.log(produtosPintura[i])
+      
         
         botaoRemover.innerText="Remover produto"
         botaoRemover.addEventListener('click', function(){
+   
+      
+          const indexProdutoRemovido = carrinhoItens.findIndex((item)=>{
+            return item.id == produtosPintura[i].id
+
+          })
+          carrinhoItens.splice(indexProdutoRemovido,1)
+          somaEcontador()
+ 
          
-         
-         quant.innerText=`Quantidade: ${carrinhoItens.length--}`
+       
          liProduto.remove()
           
-         valorTotal.innerText= `Valor total: ${soma}`
+        
 
         })
 
@@ -254,12 +252,6 @@ function gerarCard(){
 
 }
 gerarCard()
-
-
-
-//proximo passo:  criar  botão no carrinho, fazer evento de adicionar item, 
-//COMPRAS
-
 
 
 
